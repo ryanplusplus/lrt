@@ -1,5 +1,5 @@
 # lrt
-Script for easily working with Luarocks trees
+Script for easily working with Luarocks trees. Allows you to configure Lua projects to only reference project-local dependencies in order to isolate them from system-wide dependencies.
 
 ## Installation
 Place [lrt](https://github.com/ryanplusplus/lrt/blob/master/lrt) somewhere on your path.
@@ -9,13 +9,13 @@ Place [lrt](https://github.com/ryanplusplus/lrt/blob/master/lrt) somewhere on yo
 Install (or reinstall) a rock from Luarocks into `./lua_modules'.
 
 ```shell
-lrt install <rock name> [additional luarocks arguments]
+lrt install <rock name or rockspec> [additional luarocks arguments]
 ```
 
 or
 
 ```shell
-lrt i <rock name> [additional luarocks arguments]
+lrt i <rock name or rockspec> [additional luarocks arguments]
 ```
 
 ### Run
