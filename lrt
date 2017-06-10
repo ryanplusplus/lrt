@@ -1,0 +1,23 @@
+#!/bin/bash
+
+CMD=$1
+shift
+
+case $CMD in
+  r | run | e | exec)
+    (eval $(luarocks path --tree lua_modules); "$@")
+    ;;
+
+  i | install)
+    luarocks install --tree lua_modules "$@"
+    ;;
+
+  c | clean)
+    luarocks purge --tree lua_modules
+    ;;
+
+  *)
+    echo "Unknown command $CMD"
+    exit 1
+    ;;
+esac
