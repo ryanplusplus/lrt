@@ -4,7 +4,7 @@ CMD=$1
 shift
 
 case $CMD in
-  r | run | e | exec)
+  r | run)
     (eval $(luarocks path --tree lua_modules); "$@")
     ;;
 
