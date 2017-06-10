@@ -2,7 +2,9 @@
 Script for easily working with Luarocks trees. Allows you to configure Lua projects to only reference project-local dependencies in order to isolate them from system-wide dependencies.
 
 ## Installation
-Place [lrt](https://github.com/ryanplusplus/lrt/blob/master/lrt) somewhere on your path.
+```shell
+luarocks install lrt
+```
 
 ## Commands
 ### Install
