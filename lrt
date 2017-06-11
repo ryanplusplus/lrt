@@ -5,7 +5,7 @@ shift
 
 case $CMD in
   r | run)
-    (eval $(luarocks path --tree lua_modules); "$@")
+    (eval $(luarocks path --bin --tree lua_modules); "$@")
     ;;
 
   i | install)
