@@ -8,7 +8,7 @@ luarocks install lrt
 
 ## Commands
 ### Install
-Install (or reinstall) a rock from Luarocks into `./lua_modules'.
+Install (or reinstall) a rock from Luarocks into `./lua_modules`.
 
 ```shell
 lrt install <rock name or rockspec> [additional luarocks arguments]
