@@ -21,7 +21,7 @@ lrt i <rock name or rockspec> [additional luarocks arguments]
 ```
 
 ### Run
-Run a command with Luarocks binary and package paths configured for `./lua_modules'.
+Run a command with Luarocks binary and package paths configured for `./lua_modules`.
 
 ```shell
 lrt run <command name> [arguments]
