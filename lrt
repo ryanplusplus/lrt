@@ -18,6 +18,12 @@ case $CMD in
 
   *)
     echo "Unknown command $CMD"
+    echo ""
+    echo "usage: lrt <cmd> [options]"
+    echo ""
+    echo "install: lrt i/install <rock name or rockspec> [additional luarocks arguments]"
+    echo "run: lrt r/run <command name> [arguments]"
+    echo "clean: lrt c/clean"
     exit 1
     ;;
 esac
