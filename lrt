@@ -41,7 +41,7 @@ EOL
   *)
     echo "Unknown command $CMD"
     echo ""
-    echo "lrt v1.4-0"
+    echo "lrt v1.4e-0"
     echo ""
     echo "usage: lrt <cmd> [options]"
     echo ""
