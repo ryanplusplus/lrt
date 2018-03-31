@@ -15,7 +15,7 @@ case $CMD in
     ;;
 
   id | install_deps)
-    luarocks install --tree lua_modules "$DEPFILE"
+    luarocks install --tree lua_modules "$DEPFILE" --only-deps
     ;;
 
   c | clean)
@@ -27,7 +27,7 @@ case $CMD in
 package = 'deps'
 version = 'dev-0'
 source = {
-   url = 'https://lua.org/extras/5.3/strict.lua'
+   url = ''
 }
 dependencies = {
 }
@@ -41,13 +41,15 @@ EOL
   *)
     echo "Unknown command $CMD"
     echo ""
+    echo "lrt v1.4-0"
+    echo ""
     echo "usage: lrt <cmd> [options]"
     echo ""
-    echo "install:            lrt i/install <rock name or rockspec> [additional luarocks arguments]"
-    echo "install deps:       lrt id/install_deps"
-    echo "run:                lrt r/run <command name> [arguments]"
-    echo "clean:              lrt c/clean"
-    echo "write empty depfile lrt w/write_depfile"
+    echo "install:             lrt i/install <rock name or rockspec> [additional luarocks arguments]"
+    echo "install deps:        lrt id/install_deps"
+    echo "run:                 lrt r/run <command name> [arguments]"
+    echo "clean:               lrt c/clean"
+    echo "write empty depfile: lrt w/write_depfile"
     exit 1
     ;;
 esac
