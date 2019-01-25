@@ -46,6 +46,19 @@ or
 lrt r <command name> [arguments]
 ```
 
+### Test
+Run Luarocks test command with package paths configured for `./lua_modules`.
+
+```shell
+lrt test
+```
+
+or
+
+```shell
+lrt t
+```
+
 ### Clean
 Remove all rocks install in `./lua_modules`.
 
@@ -70,4 +83,10 @@ or
 
 ```shell
 lrt w
+```
+
+or
+
+```shell
+lrt init
 ```
