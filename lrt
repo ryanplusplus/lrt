@@ -11,7 +11,7 @@ case $CMD in
     ;;
 
   t | test)
-    luarocks test --tree lua_modules
+    luarocks test --tree lua_modules "$@"
     ;;
 
   i | install)
@@ -19,7 +19,11 @@ case $CMD in
     ;;
 
   id | install_deps)
-    luarocks install --tree lua_modules "$DEPFILE" --only-deps
+    ROCKSPEC="$@"
+    if [ -z "$ROCKSPEC" ]; then
+      ROCKSPEC="$DEPFILE"
+    fi
+    luarocks install --tree lua_modules "$ROCKSPEC" --only-deps
     ;;
 
   c | clean)
@@ -32,7 +36,7 @@ package = 'deps'
 version = 'dev-0'
 rockspec_format = '3.0'
 source = {
-   url = ''
+  url = ''
 }
 test = {
 }
@@ -41,7 +45,7 @@ test_dependencies = {
 dependencies = {
 }
 build = {
-   type = 'none'
+  type = 'none'
 }
 EOL
     echo "Wrote empty depfile to $DEPFILE"
@@ -50,14 +54,14 @@ EOL
   *)
     echo "Unknown command $CMD"
     echo ""
-    echo "lrt v1.4e-0"
+    echo "lrt v1.6-0"
     echo ""
     echo "usage: lrt <cmd> [options]"
     echo ""
     echo "install:             lrt i/install <rock name or rockspec> [additional luarocks arguments]"
-    echo "install deps:        lrt id/install_deps"
+    echo "install deps:        lrt id/install_deps [rockspec]"
     echo "run:                 lrt r/run <command name> [arguments]"
-    echo "test:                lrt t/test"
+    echo "test:                lrt t/test [arguments]"
     echo "clean:               lrt c/clean"
     echo "write empty depfile: lrt w/write_depfile/init"
     exit 1
